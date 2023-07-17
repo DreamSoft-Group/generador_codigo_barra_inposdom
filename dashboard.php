@@ -18,8 +18,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     }
 
 
-
-
 // Mostrar la página de inicio de sesión exitosa y el formulario de home
 include 'views/home.php';
 ?>

@@ -29,9 +29,6 @@ class codigoBarra
         // Deshabilita la impresión del encabezado en todas las páginas
         $pdf->SetPrintHeader(false);
 
-        // Agrega una página al PDF
-        $pdf->AddPage();
-
         // Genera los códigos de barras dentro del rango especificado
         $valorInicial = intval($secuencial1) + 1;
         $valorFinal = intval($secuencial2);
@@ -42,11 +39,10 @@ class codigoBarra
 
             // Genera cada código de barras tres veces
             for ($j = 0; $j < 3; $j++) {
+                $pdf->AddPage();
                 $pdf->Cell(0, 0, '', 0, 1);
                 $pdf->write1DBarcode($codigo, 'C128', '', '', '', 38, 0.9, $style, 'N');
-
-                // Crea una nueva página para cada código de barras
-                $pdf->AddPage();
+                
             }
         }
 
