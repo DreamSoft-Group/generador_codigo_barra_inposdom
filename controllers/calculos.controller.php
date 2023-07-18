@@ -72,11 +72,7 @@ class Calculos
 
                 codigoBarra::generarCodigo($cod, strval($_POST['secuencial1']), strval($data['secuencial']));
 
-            } elseif ($response == 'duplicidad') 
-            {
-            // Manejar caso de duplicidad
-            } 
-
+            }
         }
     }         
     
