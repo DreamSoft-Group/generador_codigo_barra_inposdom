@@ -6,7 +6,6 @@ class Calculos
     {
         if (isset($_POST['tipoCodigo'])) {
             $codI = $_POST['tipoCodigo'];
-            require_once '../models/calculos.model.php';
             $response = mdlCalculos::mdlShowLastRegister($codI);
             echo json_encode($response);  
         } 
@@ -71,8 +70,7 @@ class Calculos
                     $cod = 'CP';
                 }
 
-                $codigoBarra = codigoBarra::generarCodigo($cod, strval($_POST['secuencial1']), strval($data['secuencial']));
-
+                codigoBarra::generarCodigo($cod, strval($_POST['secuencial1']), strval($data['secuencial']));
 
             } elseif ($response == 'duplicidad') 
             {

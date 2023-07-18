@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/BarcodeModel.php';
+//require_once '../models/BarcodeModel.php';
 
 
 use Barcode\BarcodeGenerator;

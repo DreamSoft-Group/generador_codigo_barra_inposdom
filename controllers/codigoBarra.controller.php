@@ -1,6 +1,4 @@
 <?php
-require_once('../tcpdf/tcpdf.php');
-require_once('../tcpdf/tcpdf_barcodes_1d.php');
 
 class codigoBarra
 {
@@ -29,6 +27,9 @@ class codigoBarra
         // Deshabilita la impresión del encabezado en todas las páginas
         $pdf->SetPrintHeader(false);
 
+        // Establece el fondo del PDF como transparente
+        $pdf->SetFillColor(255, 255, 255, 0); // Establece el fondo transparente (0 indica transparencia total)
+
         // Genera los códigos de barras dentro del rango especificado
         $valorInicial = intval($secuencial1) + 1;
         $valorFinal = intval($secuencial2);
@@ -40,9 +41,8 @@ class codigoBarra
             // Genera cada código de barras tres veces
             for ($j = 0; $j < 3; $j++) {
                 $pdf->AddPage();
-                $pdf->Cell(0, 0, '', 0, 1);
-                $pdf->write1DBarcode($codigo, 'C128', '', '', '', 38, 0.9, $style, 'N');
-                
+                $pdf->SetXY(10, 10); // Ajusta las coordenadas X e Y según tus necesidades
+                $pdf->write1DBarcode($codigo, 'C128', '', '', '', 30, 0.4, $style, 'N'); // Ajusta el ancho y el alto según tus necesidades
             }
         }
 

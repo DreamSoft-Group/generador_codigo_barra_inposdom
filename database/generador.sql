@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-07-2023 a las 20:16:05
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 18-07-2023 a las 16:46:03
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `registros` (
   `codF` varchar(2) NOT NULL,
   `destino` varchar(100) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `registros`
@@ -180,7 +180,53 @@ INSERT INTO `registros` (`id`, `codI`, `secuencial`, `checkDigit`, `codF`, `dest
 (260, 1, '23014711', '5', 'DO', 'Boveda', '2023-07-14 19:18:55'),
 (262, 1, '23014713', '8', 'DO', 'Boveda', '2023-07-14 19:21:26'),
 (264, 1, '23014715', '5', 'DO', 'Boveda', '2023-07-17 15:22:16'),
-(266, 1, '23014717', '2', 'DO', 'Boveda', '2023-07-17 16:51:33');
+(266, 1, '23014717', '2', 'DO', 'Boveda', '2023-07-17 16:51:33'),
+(268, 1, '23014719', '0', 'DO', 'Boveda', '2023-07-17 18:27:42'),
+(269, 1, '23014721', '2', 'DO', 'Boveda', '2023-07-17 18:30:50'),
+(270, 2, '12346338', '9', 'DO', 'Boveda', '2023-07-18 05:12:16'),
+(271, 1, '23014723', '0', 'DO', 'Boveda', '2023-07-18 05:32:43'),
+(278, 1, '23014725', '7', 'DO', 'Boveda', '2023-07-18 05:42:32'),
+(280, 1, '23014727', '4', 'DO', 'Boveda', '2023-07-18 05:49:26'),
+(281, 1, '23014730', '5', 'DO', 'Boveda', '2023-07-18 05:50:26'),
+(283, 1, '23014731', '4', 'DO', 'Boveda', '2023-07-18 05:53:18'),
+(286, 1, '23014732', '8', 'DO', 'Boveda', '2023-07-18 05:58:18'),
+(288, 2, '12346339', '2', 'DO', 'Boveda', '2023-07-18 05:59:20'),
+(290, 1, '23014734', '5', 'DO', 'Boveda', '2023-07-18 05:59:51'),
+(292, 1, '23014735', '9', 'DO', 'Boveda', '2023-07-18 06:00:02'),
+(297, 1, '23014736', '2', 'DO', 'Boveda', '2023-07-18 06:07:09'),
+(299, 1, '23014737', '6', 'DO', 'Boveda', '2023-07-18 06:08:54'),
+(301, 1, '23014738', '0', 'DO', 'Boveda', '2023-07-18 06:12:01'),
+(303, 1, '23014739', '3', 'DO', 'Boveda', '2023-07-18 06:26:48'),
+(305, 1, '23014740', '2', 'DO', 'Boveda', '2023-07-18 06:27:16'),
+(307, 1, '23014741', '6', 'DO', 'Boveda', '2023-07-18 06:28:28'),
+(310, 1, '23014742', '0', 'DO', 'Boveda', '2023-07-18 06:29:43'),
+(314, 1, '23014743', '3', 'DO', 'Boveda', '2023-07-18 06:30:16'),
+(316, 2, '12346340', '1', 'DO', 'Boveda', '2023-07-18 06:30:37'),
+(318, 1, '23014744', '7', 'DO', 'Boveda', '2023-07-18 06:33:56'),
+(320, 1, '23014745', '5', 'DO', 'Boveda', '2023-07-18 06:37:46'),
+(321, 1, '23014747', '8', 'DO', 'Boveda', '2023-07-18 06:38:23'),
+(322, 1, '23014748', '1', 'DO', 'Boveda', '2023-07-18 06:40:34'),
+(324, 1, '23014750', '4', 'DO', 'Boveda', '2023-07-18 06:42:07'),
+(326, 1, '23014751', '8', 'DO', 'Boveda', '2023-07-18 06:43:02'),
+(329, 2, '12346341', '5', 'DO', 'Boveda', '2023-07-18 06:46:18'),
+(330, 1, '23014753', '5', 'DO', 'Boveda', '2023-07-18 06:46:43'),
+(332, 1, '23014755', '2', 'DO', 'Boveda', '2023-07-18 06:48:29'),
+(333, 2, '12346342', '9', 'DO', 'Boveda', '2023-07-18 06:48:40'),
+(334, 1, '23014756', '6', 'DO', 'Boveda', '2023-07-18 06:53:44'),
+(336, 1, '23014758', '3', 'DO', 'Boveda', '2023-07-18 12:53:41'),
+(337, 1, '23014759', '7', 'DO', 'Boveda', '2023-07-18 12:57:18'),
+(338, 2, '12346343', '2', 'DO', 'Boveda', '2023-07-18 13:08:08'),
+(340, 1, '23014760', '6', 'DO', 'Boveda', '2023-07-18 13:08:52'),
+(341, 2, '12346344', '6', 'DO', 'Boveda', '2023-07-18 13:09:40'),
+(342, 1, '23014762', '3', 'DO', 'Boveda', '2023-07-18 13:20:16'),
+(343, 1, '23014763', '7', 'DO', 'Boveda', '2023-07-18 13:24:14'),
+(344, 2, '12346346', '3', 'DO', 'Boveda', '2023-07-18 13:26:19'),
+(346, 2, '12346348', '5', 'DO', 'Boveda', '2023-07-18 13:26:43'),
+(347, 1, '23014764', '5', 'DO', 'Boveda', '2023-07-18 13:38:08'),
+(348, 1, '23014765', '4', 'DO', 'Boveda', '2023-07-18 13:54:16'),
+(351, 1, '23014766', '8', 'DO', 'Boveda', '2023-07-18 13:56:07'),
+(354, 1, '23014767', '1', 'DO', 'Boveda', '2023-07-18 13:56:24'),
+(355, 1, '23014768', '5', 'DO', 'Boveda', '2023-07-18 13:56:41');
 
 -- --------------------------------------------------------
 
@@ -191,7 +237,7 @@ INSERT INTO `registros` (`id`, `codI`, `secuencial`, `checkDigit`, `codF`, `dest
 CREATE TABLE `tipocodigos` (
   `id` int(11) NOT NULL,
   `name` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipocodigos`
@@ -200,6 +246,26 @@ CREATE TABLE `tipocodigos` (
 INSERT INTO `tipocodigos` (`id`, `name`) VALUES
 (1, 'RR'),
 (2, 'CP');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `username`, `password`, `nombre`) VALUES
+(1, 'melquisedec', '123456', 'Genesis M. Sarante');
 
 --
 -- Índices para tablas volcadas
@@ -220,6 +286,13 @@ ALTER TABLE `tipocodigos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -227,13 +300,19 @@ ALTER TABLE `tipocodigos`
 -- AUTO_INCREMENT de la tabla `registros`
 --
 ALTER TABLE `registros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=268;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=356;
 
 --
 -- AUTO_INCREMENT de la tabla `tipocodigos`
 --
 ALTER TABLE `tipocodigos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

@@ -78,13 +78,17 @@
         <?php if (isset($error)): ?>
             <div class="error"><?php echo $error; ?></div>
         <?php endif; ?>
-        <form method="POST" action="views/home.php">
+        <form method="POST">
             <label for="username">Usuario:</label>
             <input type="text" name="username" id="username" required>
             <label for="password">Contraseña:</label>
             <input type="password" name="password" id="password" required>
             <br><br>
-            <input type="submit" value="Iniciar sesión">
+            <input type="submit" value="Iniciar sesión" name="login">
+            <?php
+            $login = new ctrUsuario();
+            $login->ctrMostrarUsuario();
+            ?>
         </form>
     </div>
 </body>
