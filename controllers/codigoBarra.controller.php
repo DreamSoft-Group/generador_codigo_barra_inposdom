@@ -4,6 +4,18 @@ class codigoBarra
 {
     public static function generarCodigo($cod, $secuencial1, $secuencial2)
     {
+        // Configuración del tamaño del label
+        $labelWidth = 70; // Ancho del label en mm
+        $labelHeight = 30; // Alto del label en mm
+
+        // Crea una instancia de la clase TCPDF
+        $pdf = new TCPDF('L', 'mm', array($labelWidth +10, $labelHeight), true, 'UTF-8');
+
+        // Deshabilita la impresión del encabezado en todas las páginas
+        $pdf->SetPrintHeader(false);
+        $pdf->setPrintFooter(false);
+
+        // Configuración del estilo del código de barras
         $style = array(
             'position' => '',
             'align' => 'C',
@@ -18,31 +30,24 @@ class codigoBarra
             'text' => true,
             'font' => 'helvetica',
             'fontsize' => 16,
-            'stretchtext' => 8
+            'stretchtext' => false
         );
-
-        // Crea una instancia de la clase TCPDF
-        $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8');
-
-        // Deshabilita la impresión del encabezado en todas las páginas
-        $pdf->SetPrintHeader(false);
-
-        // Establece el fondo del PDF como transparente
-        $pdf->SetFillColor(255, 255, 255, 0); // Establece el fondo transparente (0 indica transparencia total)
 
         // Genera los códigos de barras dentro del rango especificado
         $valorInicial = intval($secuencial1) + 1;
         $valorFinal = intval($secuencial2);
 
+        // Desactivar salto de página automático
+        $pdf->SetAutoPageBreak(false);
+
         for ($i = $valorInicial; $i <= $valorFinal; $i++) {
             $check = Calculos::calcularDigitoControl($i);
             $codigo = $cod . $i . $check . 'DO';
 
-            // Genera cada código de barras tres veces
             for ($j = 0; $j < 3; $j++) {
                 $pdf->AddPage();
-                $pdf->SetXY(10, 10); // Ajusta las coordenadas X e Y según tus necesidades
-                $pdf->write1DBarcode($codigo, 'C128', '', '', '', 30, 0.4, $style, 'N'); // Ajusta el ancho y el alto según tus necesidades
+                $pdf->SetXY(10, 2); // Ajusta las coordenadas X e Y según tus necesidades
+                $pdf->write1DBarcode($codigo, 'C128', '', '', $labelWidth, $labelHeight, '', $style, ''); // Ajusta el ancho y el alto según tus necesidades
             }
         }
 
