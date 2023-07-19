@@ -53,7 +53,8 @@ class Calculos
                     'secuencial' => $secuencial,
                     'check' => $check,
                     'codI' => $_POST['tipoCodigo'],
-                    'country' => 'DO'
+                    'country' => 'DO',
+                    'cantidad' =>$_POST['cantidad']
                     );
   
                 $response = mdlCalculos::mdlCreateRegister($data);
@@ -74,6 +75,20 @@ class Calculos
 
             }
         }
-    }         
+    } 
+
+    public static function ctrMostrarInforme($codigo, $fecha)
+    {
+        $tabla = 'registros';
+        $datos = array(
+            'codigo' => $codigo,
+            'fecha' => $fecha
+        );
+
+        $response = mdlCalculos::mdlMostrarInforme($tabla, $datos);
+
+        return $response;
+    }
+       
     
 }

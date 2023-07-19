@@ -6,7 +6,6 @@ session_start();
 <html>
 <head>
     <title>Generador de Códigos de Barras</title>
-    <link rel="stylesheet" type="text/css" href="../public/styles.css">
     <!-- Agrega las librerías de Bootstrap y jQuery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
