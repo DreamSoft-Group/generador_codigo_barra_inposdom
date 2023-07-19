@@ -8,6 +8,7 @@ session_start();
     <title>Generador de Códigos de Barras</title>
     <!-- Agrega las librerías de Bootstrap y jQuery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/menu.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -29,10 +30,14 @@ session_start();
                         </button>
                             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                                 <div class="navbar-nav">
-                                    <a class="nav-link active" href="create">Crear código de Barra <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="create">Crear código de Barra </a>
                                     <a class="nav-link" href="report">Reporte</a>
                                     <a class="nav-link" href="reimpresion">Reimpresion</a>
+                                     </div>
+                                <div class="ml-auto">
                                     <a class="nav-link" href="salir">Salir</a>
+                            </div>
+                             </div>
                                 </div>
                         </div>
                     </nav>

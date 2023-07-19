@@ -1,0 +1,4 @@
+/* Estilo para los enlaces activos */
+.nav-link.active {
+    color: red; /* Puedes cambiar el color que desees */
+}

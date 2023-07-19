@@ -123,7 +123,21 @@ $(document).ready(function() {
         // Imprimir el contenido en la ventana emergente
         ventanaImpresion.print();
     }, 500);
-});
+    });
 
+
+    // Obtenemos la URL actual
+    var currentUrl = window.location.href;
+
+    // Verificamos qué vista está abierta según la URL y le agregamos la clase "active"
+    if (currentUrl.includes("create")) {
+        $(".nav-link[href='create']").addClass("active");
+    } else if (currentUrl.includes("report")) {
+        $(".nav-link[href='report']").addClass("active");
+    } else if (currentUrl.includes("reimpresion")) {
+        $(".nav-link[href='reimpresion']").addClass("active");
+    } else if (currentUrl.includes("salir")) {
+        $(".nav-link[href='salir']").addClass("active");
+    }
 
 });
