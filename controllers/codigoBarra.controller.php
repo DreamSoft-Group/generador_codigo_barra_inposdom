@@ -2,7 +2,7 @@
 
 class codigoBarra
 {
-    public static function generarCodigo($cod, $secuencial1, $secuencial2)
+    public static function generarCodigo($cod, $secuencial1, $secuencial2, $boolean)
     {
         // Configuración del tamaño del label
         $labelWidth = 70; // Ancho del label en mm
@@ -34,7 +34,13 @@ class codigoBarra
         );
 
         // Genera los códigos de barras dentro del rango especificado
-        $valorInicial = intval($secuencial1) + 1;
+        if($boolean === true)
+        {
+            $valorInicial = intval($secuencial1) + 1;
+        }else{
+            $valorInicial = intval($secuencial1);
+        }
+        
         $valorFinal = intval($secuencial2);
 
         // Desactivar salto de página automático

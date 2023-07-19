@@ -68,4 +68,25 @@ class mdlCalculos
         }
     }
 
+    public static function mdlConsultarLabel($datos)
+    {
+        $object = new conexion();
+        $stmt = $object->connect()->prepare("SELECT MIN(secuencial) AS `minimo`, MAX(secuencial) AS `maximo`, count(secuencial) AS `cantidad` FROM `registros` WHERE codI = ? AND secuencial BETWEEN ? AND ?");
+        $stmt->bindParam(1, $datos['codigo'], PDO::PARAM_STR);
+        $stmt->bindParam(2, $datos['desde'], PDO::PARAM_STR);
+        $stmt->bindParam(3, $datos['hasta'], PDO::PARAM_STR);
+        
+        try
+        {
+            $stmt->execute();
+            return $stmt->fetch();
+            
+        }catch(PDOException $e)
+        {
+            return $e->getMessage();
+        }
+        
+        
+    }
+
 }

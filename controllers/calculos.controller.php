@@ -2,7 +2,8 @@
 
 class Calculos
 {
-     public static function ctrShowLastRegister()
+    
+    public static function ctrShowLastRegister()
     {
         if (isset($_POST['tipoCodigo'])) {
             $codI = $_POST['tipoCodigo'];
@@ -12,7 +13,8 @@ class Calculos
     }
 
 
-    public static function calcularDigitoControl($numero) {
+    public static function calcularDigitoControl($numero) 
+    {
         $pesos = array(8, 6, 4, 2, 3, 5, 9, 7);
         $suma = 0;
     
@@ -71,11 +73,12 @@ class Calculos
                     $cod = 'CP';
                 }
 
-                codigoBarra::generarCodigo($cod, strval($_POST['secuencial1']), strval($data['secuencial']));
+                codigoBarra::generarCodigo($cod, strval($_POST['secuencial1']), strval($data['secuencial']), true);
 
             }
         }
     } 
+    
 
     public static function ctrMostrarInforme($codigo, $fecha)
     {
@@ -88,6 +91,44 @@ class Calculos
         $response = mdlCalculos::mdlMostrarInforme($tabla, $datos);
 
         return $response;
+    }
+
+    public function ctrReimprimirLabel()
+    {
+        if(isset($_POST['reimprimir']))
+        {
+            if(isset($_POST['destino']) && isset($_POST['tipoCodigo']) && isset($_POST['desde']))
+            {
+                $hasta = "";
+                if(isset($_POST['hasta']) && $_POST['hasta'] != null)
+                {
+                    $hasta = $_POST['hasta'];
+                }else{
+                   $hasta = $_POST['desde']; 
+                }
+
+                $datos = array('destino' => $_POST['destino'],
+                               'codigo' => $_POST['tipoCodigo'],
+                               'desde' => $_POST['desde'],
+                               'hasta' => $hasta);
+
+                $respuesta = mdlCalculos::mdlConsultarLabel($datos);
+   
+                if($respuesta['cantidad'] > 0)
+                {
+                    $cod = null;
+
+                    if ($datos['codigo'] == 1) {
+                        $cod = 'RR';
+                    } else {
+                        $cod = 'CP';
+                    }
+
+                    codigoBarra::generarCodigo($cod, strval($datos['desde']), strval($respuesta['maximo']), false);
+
+                }
+            }
+        }
     }
        
     
